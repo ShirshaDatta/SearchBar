@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "578587656877",
+    "firebase_url": "https://searchimplement.firebaseio.com",
+    "project_id": "searchimplement",
+    "storage_bucket": "searchimplement.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578587656877:android:ff1d94d2c46a653cdf7c24",
+        "android_client_info": {
+          "package_name": "com.taskint.SearchImplement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578587656877-6kq4gur9v42f0k407i6aia85otrd0ghr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPR9NR4M6urz5UBAdLuuHXZn0SMSZXx_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578587656877-6kq4gur9v42f0k407i6aia85otrd0ghr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
