@@ -10,7 +10,6 @@ void main()
   runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
     initialRoute: "home",
     routes: {
-    "home": (context) => HomePage(),
+    "home": (context) => SearchPage(),
     },
   debugShowCheckedModeBanner: false,
   );

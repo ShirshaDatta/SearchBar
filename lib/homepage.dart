@@ -1,107 +1,118 @@
 import 'package:SearchImplement/search/searchService.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+//import 'package:SearchImpl/search/searchService.dart';
 
-class HomePage extends StatefulWidget {
+class SearchPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _SearchPageState createState() => _SearchPageState();
 }
 
+class _SearchPageState extends State<SearchPage> {
+  SearchService databaseMethods = SearchService();
+  //var auth = FirebaseAuth.instance;
+  QuerySnapshot searchSnapshot;
 
+  Widget searchList() {
+    return searchSnapshot != null
+        ? ListView.builder(
+            shrinkWrap: true,
+            itemCount: searchSnapshot.docs.length,
+            itemBuilder: (context, index) {
+              return SearchTile(
+                name: searchSnapshot.docs[index].get('Name'),
+                //if(,)
+                searchKey: searchSnapshot.docs[index].get('Genre').toString(),
+              );
+            },
+          )
+        : Container();
+  }
 
-class _HomePageState extends State<HomePage> {
-  Widget buildResultCont(data){
-      return Container(
-        color: Colors.black,
-        child: Column(
-          children: [
-            Text(data['Genre'],
-            style: TextStyle(
-              color:Colors.pink ,
-              ),
-              textAlign: TextAlign.right,),
-            Text(data['Concerts'],
-            style: TextStyle(
-              color:Colors.white ,
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.right,),
-          ],
-        ),
-      );
-    }
-
-
- var queryResultSet = [];
- var tempSearchStore = [];
- 
-  initiateSearch(value)
-  {
-
-    //if the user after entering the search removes everything
-    if(value.length == 0){
-      queryResultSet =[];
-      tempSearchStore = [];
-    }
-
-    //convert the first letter to capital and append the rest
-    var capitalizedValue = value.substring(0,1).toUpperCase() + value.substring(1);
-
-    //make the query to triggr search when the user searches based on first char
-    if(queryResultSet.length == 0 && value.length == 1){
-      SearchService().serachByName(value).then((QuerySnapshot docs) {
-        // ignore: deprecated_member_use
-        for(int i=0;i<docs.documents.length; i++){
-          // ignore: deprecated_member_use
-          queryResultSet.add(docs.documents[i].data);
-        }
-      });
-    }
-    else{
-      tempSearchStore = [];
-      queryResultSet.forEach((element) {
-        if (element['Name'].startsWith(capitalizedValue)) {
-          setState(() {
-            tempSearchStore.add(element);
-          });
-        }
-      });
-    }
-  } 
-
+  String search;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: TextField(
-        onChanged: (val){
-          initiateSearch(val);
-        },
-         autocorrect: true,
-              decoration: InputDecoration(
-                isDense: true, // Added this
-                contentPadding: EdgeInsets.all(10),
-                hintText: 'Search events',
-                suffixIcon: Icon(Icons.search),
-                disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+      //backgroundColor: Colors.blueGrey,
+      body: Column(
+        children: [
+          Container(
+            //padding: EdgeInsets.all(.0),
+            height: 55,
+            margin: EdgeInsets.symmetric(horizontal: 5),
+            decoration: BoxDecoration(
+              color: Colors.blueGrey[900],
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          onChanged: (value) {
+                            search = value;
+                            databaseMethods.serachByName(search).then((val) {
+                              setState(() {
+                                searchSnapshot = val;
+                              });
+                            });
+                          },
+                          decoration: InputDecoration(
+                            hintText: 'Search by name',
+                            hintStyle: TextStyle(color: Colors.white,fontSize: 16),
+                            border: InputBorder.none,
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          print(searchSnapshot.docs);
+                        },
+                        child: Container( 
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                           // color: Colors.pink,
+                          //  borderRadius: BorderRadius.circular(25),
+                          ),
+                          child: Icon(
+                            Icons.search,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                
-        ),
-      ),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(new Radius.circular(20.0)),
-        side: BorderSide()
-      ), 
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(8),
-        children: tempSearchStore.map((element) {
-          return buildResultCont(element);
-        }).toList()
+              ],
+            ),
+          ),
+          searchList(),
+        ],
       ),
     );
+  }
+}
 
-    
+class SearchTile extends StatelessWidget {
+  String name;
+  String searchKey;
+
+  SearchTile({this.name, this.searchKey});
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(
+        searchKey,
+        style: TextStyle(
+            color: Colors.pinkAccent,  fontSize: 16),
+      ),
+      subtitle: Text(name, style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20)),
+    );
   }
 }
