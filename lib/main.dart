@@ -1,3 +1,5 @@
+import 'package:SearchImplement/addConcert.dart';
+import 'package:SearchImplement/details.dart';
 import 'package:SearchImplement/homepage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +18,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       darkTheme: ThemeData.dark(),
-    initialRoute: "home",
+    initialRoute: "addconcert",
     routes: {
     "home": (context) => SearchPage(),
+    "addconcert" :(context) => AddConcert(),
+    //"deets" : (context) => Concert(),
     },
   debugShowCheckedModeBanner: false,
   );
