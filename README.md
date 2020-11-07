@@ -1,6 +1,6 @@
 # SearchImplement
 
-A new Flutter project.
+A new Flutter project for searching the queries stored in the Firestore Database.
 
 ## Getting Started
 
@@ -14,3 +14,24 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+## The Project Structure
+
+This project contains 2 pages
+1. To add the concert details automatically
+2. To display the search results based on the data stored in the firestore database
+
+## The apk of the app is stored in the folder
+
+In the directory : SearchImplement/build/app/outputs/flutter-apk
+
+## The screenshots:
+<img src="screenshots/Capture1.PNG" alt="Logo">
+<img src="screenshots/Capture2.PNG" alt="Logo">
+
+## The video implementation
+
+It is stored in: SearchImplement/screenshots
+
+
