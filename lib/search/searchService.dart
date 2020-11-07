@@ -1,13 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SearchService {
-  serachByName(String searchField) async {
+  serachByName(searchField) async {
     //searching based on First char
-    return await FirebaseFirestore.instance
+    for (var i = 0; i < searchField.length; i++) {
+          
+          String t =searchField[i];
+          return await FirebaseFirestore.instance
         .collection('Concerts')
         .where('searchKey',
-            isEqualTo: searchField.substring(0, 1).toUpperCase())
+            isEqualTo: searchField.contains(t)
+            )
         .get();
+        }
   }
 
   // searchConcert(String concert) async {

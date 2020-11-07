@@ -54,8 +54,7 @@ class _SearchPageState extends State<SearchPage> {
                     children: [
                       Expanded(
                         child: TextField(
-                          onChanged: (value) {
-                            
+                          onChanged: (value) { 
                             search = value;
                             databaseMethods.serachByName(search).then((val) {
                               setState(() {
