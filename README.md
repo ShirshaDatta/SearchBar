@@ -46,6 +46,7 @@ https://drive.google.com/file/d/1q1fL7nlspFrs8bqX-JenEBABdqwKE8H0/view?usp=shari
 
 
 ## Technologies Used:
-
+<p>
 <img height=65px src="https://img.icons8.com/color/2x/flutter.png"> 
 <img height=65px src="https://www.bogotobogo.com/DevOps/images/DevOps/GCP/GCP-ICON.png">
+</p>
