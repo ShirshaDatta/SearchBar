@@ -31,10 +31,6 @@ This project contains 2 pages
 1. To add the concert details automatically
 2. To display the search results based on the data stored in the firestore database
 
-## The apk of the app is stored in the folder
-
-https://drive.google.com/file/d/1q1fL7nlspFrs8bqX-JenEBABdqwKE8H0/view?usp=sharing
-
 
 ## The screenshots:
 <img src="screenshots/Capture1.PNG" alt="Logo">
@@ -44,3 +40,12 @@ https://drive.google.com/file/d/1q1fL7nlspFrs8bqX-JenEBABdqwKE8H0/view?usp=shari
 
 https://drive.google.com/file/d/1cH3ga2XXvESzhOU-djGO1Bt9Giw87JzZ/view?usp=sharing
 
+## The apk of the app is stored in the folder
+
+https://drive.google.com/file/d/1q1fL7nlspFrs8bqX-JenEBABdqwKE8H0/view?usp=sharing
+
+
+## Technologies Used:
+
+<img height=65px src="https://img.icons8.com/color/2x/flutter.png"> 
+<img height=65px src="https://www.bogotobogo.com/DevOps/images/DevOps/GCP/GCP-ICON.png">
