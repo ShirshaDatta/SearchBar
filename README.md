@@ -50,3 +50,14 @@ https://drive.google.com/file/d/1q1fL7nlspFrs8bqX-JenEBABdqwKE8H0/view?usp=shari
 <img height=65px src="https://img.icons8.com/color/2x/flutter.png"> 
 <img height=65px src="https://www.bogotobogo.com/DevOps/images/DevOps/GCP/GCP-ICON.png">
 </p>
+
+## Having Issues
+This project uses [GitHub Issues](https://github.com/ShirshaDatta/Connects-2/issues) for tracking bugs and feature requests, so feel free to open one if you find any :)
+
+<br />
+
+<div align="center">
+
+##### Made with ❤️ by  Shirsha Datta
+
+</div>
