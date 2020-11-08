@@ -15,8 +15,17 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+## How to setup?
+#### Prerequisites
+1. Installed flutter sdk
+2. Path variables correctly setup
 
-## The Project Structure
+```
+1. Clone repository
+2. Run get dependencies (Android studios)
+3. Run on your device/emulator
+```
+#### The Project Structure
 
 This project contains 2 pages
 1. To add the concert details automatically
@@ -24,7 +33,8 @@ This project contains 2 pages
 
 ## The apk of the app is stored in the folder
 
-In the directory : SearchImplement/build/app/outputs/flutter-apk
+https://drive.google.com/file/d/1q1fL7nlspFrs8bqX-JenEBABdqwKE8H0/view?usp=sharing
+
 
 ## The screenshots:
 <img src="screenshots/Capture1.PNG" alt="Logo">
@@ -32,6 +42,5 @@ In the directory : SearchImplement/build/app/outputs/flutter-apk
 
 ## The video implementation
 
-It is stored in: SearchImplement/screenshots
-
+https://drive.google.com/file/d/1cH3ga2XXvESzhOU-djGO1Bt9Giw87JzZ/view?usp=sharing
 
